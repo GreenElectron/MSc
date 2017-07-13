@@ -1,0 +1,266 @@
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{amsmath}
+\usepackage{amssymb}
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Best Thesis of the World, the Universe, and All Time}
+\author{M. Strange Quark}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+
+\renewcommand{\i}{\mathrm{i}} 
+\renewcommand{\d}{\mathrm{d}} 
+\newcommand{\e}{\mathrm{e}} 
+\newcommand{\g}{\mathrm{g}} 
+\newcommand{\pb}[1]{\left[ #1\right]_{\mathrm{P.B.}}}
+
+\maketitle
+
+\section{Classical bosonic strings}
+
+An open string swipes out a world sheet in D dimensional spacetime. This world sheet can be parametrised by coordinates
+\begin{equation}
+	(\sigma^1, \sigma^2) = (\tau, \sigma),\; 0\leq \sigma\leq\pi\;.
+\end{equation}
+The string's spacetime coordinates can be written as
+\begin{equation}
+	X^{\mu}(\sigma, \tau),\; \mu = 0 ,...\;,D-1\;.
+\end{equation}
+The metric on the world sheet is
+\begin{equation}
+	h_{ab} = \partial_aX^{\mu}\partial_bX^{\nu}\eta_{\mu\nu},\; a, b = \tau, \sigma\;.
+\end{equation}
+We make an educated guess and assume the action is proportional to the total rea of the world sheet, similar to GR, where the action could be written as proportional to the total length of the world line of a point particle.
+\begin{align}
+	S_0 &= -T\int\d A = -T\int\d\tau\d\sigma \sqrt{ -\mathrm{det}\;h_{ab}}\\
+	       &= -T\int\d\tau\d\sigma \sqrt{ \left( X'\cdot\dot{X}\right)^2 - X'^2\cdot\dot{X}^2 } \;.
+\end{align}
+This is called the Nambu-Goto action. From this, one can obtain equations of motion for the string. Defining the conjugate momenta as
+\begin{equation}
+	P^{\mu}_{\tau} = \dfrac{\partial\mathcal{L}}{\partial\dot{X}_{\mu}},\;P^{\mu}_{\sigma} = \dfrac{\partial\mathcal{L}}{\partial X'_{\mu}}\;,
+\end{equation}
+the e.o.m. take the form
+\begin{equation}
+	\dfrac{\partial}{\partial\tau}P^{\mu}_{\tau} + \dfrac{\partial}{\partial\sigma}P^{\mu}_{\sigma} = 0\;,\\
+\end{equation}
+with boundary conditions
+\begin{equation}
+	P^{\mu}_{\sigma} = 0\;\mathrm{ at }\;\sigma=0,\;\pi\;.
+\end{equation}
+Here,
+\begin{align}
+	&P^{\mu}_{\sigma} = T\dfrac{X'^{\mu}\dot{X}^2 - \dot{X}^{\mu}\left( \dot{X}\cdot X' \right)}{\sqrt{\left( \dot{X}\cdot X' \right)^2 - \dot{X}^2X'^2}}\\
+	\Rightarrow & P_{\sigma}^2 = -2T^2\dot{X}^2\;.
+\end{align}
+The boundary conditions imply that $\dot{X}^2$ vanishes at the end points of the string: the endpoint move at the speed of light.\newline
+In analogy with the one dimensional case, it is again possible to write down an equivalent action by introducing an independent metric $\gamma_{ab}(\tau,\sigma)$ on the world sheet. This is called the Polyakov action,
+\begin{align}
+	S &= -\dfrac{1}{4\pi\alpha'} \int\d\tau\d\sigma \sqrt{-\gamma}\;\gamma^{ab}\partial_aX^{\mu}\partial_bX^{\nu}\eta_{\mu\nu}\\
+	   &=  -\dfrac{1}{4\pi\alpha'} \int\d^2\sigma \sqrt{-\gamma}\;\gamma^{ab}h_{ab}\;.
+\end{align}
+The Polyakov action has several symmetries. One is obviously Lorentz symmetry. Another is known as world sheet reparametrisation,
+\begin{align}
+	\delta X^{\mu} &= \zeta^a\partial_aX^{\mu}\;,\\
+	\delta\gamma^{ab} &= \zeta^c\partial_c\gamma^{ab} - \partial_c\zeta^a\gamma^{cb} - \partial_c\zeta^b\gamma^{ac}\;.
+\end{align} 
+Furthermore, there is Weyl invariance,
+\begin{equation}
+	\gamma_{ab} \rightarrow \gamma_{ab}' = \e^{2\omega(\tau,\sigma)}\gamma_{ab}\;.
+\end{equation}
+The equations of motion in this case are
+\begin{equation}
+	\partial_a\left\{ \sqrt{-\gamma}\;\gamma^{ab}\partial_bX^{\mu}\right\} \equiv \sqrt{-\gamma}\nabla^2X^{\mu} = 0\;,
+\end{equation}
+with boundary conditions
+\begin{itemize}
+	\item open string  (Neumann b.c.): 
+		\begin{equation}
+			X'^{\mu}(\tau,\sigma = 0) = X'^{\mu}(\tau,\sigma = \pi) = 0\;,
+		\label{neumannbc}
+		\end{equation}
+	\item closed string (periodic b.c.): 
+		\begin{align}
+			&X'^{\mu}(\tau,\sigma = 0) = X'^{\mu}(\tau,\sigma = \pi);,\nonumber\\
+			&X^{\mu}(\tau,\sigma = 0) = X^{\mu}(\tau,\sigma = \pi);,\nonumber\\
+			&\gamma_{ab}(\tau,\sigma = 0) = \gamma_{ab}(\tau,\sigma = \pi)\;.\label{periodicbc}
+		\end{align}
+\end{itemize}
+The question then arises whether there are any more terms which can be added to the action, and which have the same symmetry properties. One such possible term is the Einstein--Hilbert action,
+\begin{equation}
+	\chi = \dfrac{1}{4\pi}\int_{\mathcal{M}} \d^2\sigma \sqrt{-\gamma}\;R + \dfrac{1}{2\pi}\int_{\partial\mathcal{M}}\d s\;K\;,
+\end{equation}
+where $R$ is the two-dimensional Ricci scalar, $\mathcal{M}$ is the world sheet manifold, and $K$ is the trace of the extrinsic curvature tensor on the boundary of the world sheet. 
+Another possibility is the cosmological term 
+\begin{equation}
+	\theta = \dfrac{1}{4\pi\alpha'}\int_{\mathcal{M}} \d^2\sigma\sqrt{-\gamma}\;.
+\end{equation}
+However, $\theta$ is not invariant under Weyl transformations, whereas $\chi$ is, so only the latter is included.
+The full string action now looks like two-dimensional gravity coupled to D bosonic matter fields with the equations of motion,
+\begin{equation}
+	R_{ab} - \dfrac{1}{2}\gamma_{ab}R = T_{ab}\;.
+	\label{eom2dgravmat}
+\end{equation}
+The left hand side of Eq. \eqref{eom2dgravmat} vanishes in two dimensions. $\chi$ has no dynamics, it only depends on the topology of the world sheet (it is its Euler number). The string action now has the following form,
+\begin{equation}
+	S = \dfrac{1}{4\pi\alpha'}\int_{\mathcal{M}}\d^2\sigma\sqrt{-g}\;g^{ab}\partial_aX^{\mu}\partial_bX_{\mu} + \lambda\left\{  \dfrac{1}{4\pi}\int_{\mathcal{M}}\d^2\sigma\sqrt{g}R + \dfrac{1}{2\pi}\int_{\partial\mathcal{M}} \d s K \right\}\;,
+\label{stringaction}
+\end{equation}
+where $\gamma^{ab}$ has been replaced with the Euclidean signature $g^{ab} = (++)$. 
+$\lambda$ is, at this point, a free parameter. However, later, it will turn out to be the expectation value of the massless dilaton.\newline
+In the path integral formulation of the theory,
+\begin{equation}
+	\mathcal{Z} = \int\mathcal{D}\chi\mathcal{D}g\;\e^{-S}\;,
+\end{equation}
+amplitudes will be weighted by $\mathrm{exp}(-\lambda x)$, where $x$ is the Euler number of the world sheet.\newline
+it is possible to define the two-dimensional energy-momentum tensor
+\begin{equation}
+	T^{ab}(\tau,\sigma) = -\dfrac{2\pi}{\sqrt{-\gamma}} \dfrac{\delta S}{\delta\gamma_{ab}} = -\dfrac{1}{\alpha'}\left( \partial^aX_{\mu}\partial^bX^{\mu} - \dfrac{1}{2}\gamma^{ab}\gamma_{cd}\partial^cX_{\mu}\partial^dX^{\mu}  \right)\;.
+\end{equation}
+Reparametrisation invariance, $\delta_{\gamma}S = 0$ means that $T_{ab} = 0$.\newline
+The action \eqref{stringaction} has the following symmetries,
+\begin{align}
+	\tau, \sigma &\rightarrow \tilde{\tau}(\tau, \sigma), \tilde{\sigma}(\tau,\sigma)\;,\\
+	\gamma_{ab} &\rightarrow \e^{2\omega(\tau,\sigma)}\;.
+\end{align}
+One may use these gauge symmetries to choose a metric,
+\begin{equation}
+	\gamma_{ab} = \eta_{ab}\;\e^{\phi} = 
+	\begin{bmatrix}
+		-1&0\\
+		0&1
+	\end{bmatrix}
+	\e^{\phi}\;.
+\end{equation}
+$\e^{\phi}$ is called conformal factor. In this conformal gauge, the equations of motion are simply,
+\begin{equation}
+	\left( \dfrac{\partial^2}{\partial\sigma^2} - \dfrac{\partial^2}{\partial\tau^2}	\right) X^{\mu}(\tau, \sigma)=0\;.
+\end{equation}
+The solutions of these equations of motion with the aforementioned boundary conditions \eqref{neumannbc}, \eqref{periodicbc} can be written as
+\begin{equation}
+	X^{\mu}(\tau,\sigma) = x^{\mu} + 2\alpha'p^{\mu}\tau + \i  \sqrt{2\alpha'}\sum_{n\neq0} \dfrac{1}{n} \alpha_n^{\mu}\e^{-\i n\tau}\mathrm{cos}(n\sigma)
+\end{equation}
+for the open string and
+\begin{align}
+	X^{\mu}(\tau,\sigma) &= X^{\mu}_R(\sigma^-) + X^{\mu}_L(\sigma^+), \; \sigma^{\pm} \equiv \tau\pm\sigma\;,\\
+	X^{\mu}_R(\sigma^-)&= \dfrac{1}{2}x^{\mu} + \alpha'p^{\mu}\sigma^- + \i \sqrt{\dfrac{\alpha'}{2}} \sum_{n\neq0}\dfrac{1}{n}\alpha^{\mu}_n\e^{-2\i n\sigma^-}\;,\\
+	X^{\mu}_L(\sigma^+)&= \dfrac{1}{2}x^{\mu} + \alpha'p^{\mu}\sigma^+ + \i \sqrt{\dfrac{\alpha'}{2}} \sum_{n\neq0}\dfrac{1}{n}\tilde{\alpha}^{\mu}_n\e^{-2\i n\sigma^+}\;.
+\end{align}
+for the closed string. Impose a reality condition,
+\begin{equation}
+	\overset{(\sim)}{\alpha}^{\mu}_{-n} = \left( \overset{(\sim)}{\alpha}^{\mu}_n \right)^* \;.
+\end{equation}
+There is still some residual symmetry. We can do a change of variables,
+\begin{align}
+	\sigma^+&\rightarrow f(\sigma^+) = \sigma'^+\;,\\
+	\sigma^-&\rightarrow g(\sigma^-) = \sigma'^-\;.
+\end{align}
+Then,
+\begin{equation}
+	\gamma'_{ab} = \dfrac{\partial\sigma^c}{\partial\sigma'^a}\dfrac{\partial\sigma^d}{\partial\sigma'^b}\gamma_{cd}\;,
+\end{equation}
+so
+\begin{equation}
+	\gamma'_{+-}=\left( \dfrac{\partial f}{\partial\sigma^+}\dfrac{\partial g}{\partial\sigma^-} \right)^{-1}\gamma_{+-}\;.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+\end{equation}
+However, this can be undone by a Weyl transformation,
+\begin{equation}
+	\gamma'_{+-} = \e^{2\omega_L(\sigma^+) + 2\omega_R(\sigma^-)}\gamma_{+-},
+\end{equation}
+if exp$(-2\omega_L(\sigma^+)) = \partial_+f$ and exp$(-2\omega_R(\sigma^-)) = \partial_-g\;$.\newline
+It is also possible to apply some Hamiltonian mechanics. The Lagrangian density has the form
+\begin{equation}
+	\mathcal{L} = -\dfrac{1}{4\pi\alpha'} \left( \partial_{\sigma}X^{\mu}\partial_{\sigma}X_{\mu} -  \partial_{\tau}X^{\mu}\partial_{\tau}X_{\mu}\right)\;.
+\end{equation}
+One can write down the Poisson brackets,
+\begin{align}
+	&\pb{ X^{\mu}(\sigma),  X^{\nu}(\sigma')} = \eta^{\mu\nu} \delta(\sigma - \sigma')\;,\\
+	&\pb{ \Pi^{\mu}(\sigma),  \Pi^{\nu}(\sigma')} = 0\\
+	\Rightarrow& \pb{\alpha^{\mu}_m, \alpha^{\nu}_n} = \pb{\tilde{\alpha}^{\mu}_m, \tilde{\alpha}^{\nu}_n} = \i m\delta_{m+n}\eta^{\mu\nu}\;,\\
+	&\pb{p^{\mu}, x^{\nu}} = \eta^{\mu\nu}\;,\\
+	& \pb{\alpha^{\mu}_m, \tilde{\alpha}^{\nu}_n} =0\;.
+\end{align}
+Hence, the Hamiltonian density is
+\begin{equation}
+	\mathcal{H} = \dot{X}^{\mu}\Pi_{\mu} - \mathcal{L} = \dfrac{1}{4\pi\alpha'}\left( \partial_{\sigma}X^{\mu}\partial_{\sigma}X_{\mu} + \partial_{\tau}X^{\mu} \partial_{\tau}X_{\mu}\right)\;,
+\end{equation}
+and the Hamiltonian reads
+\begin{align}
+	H 	&= \int_0^{\pi}\d\sigma\mathcal{H}(\sigma)	= \dfrac{1}{2}\sum_{n=-\infty}^{\infty}\alpha_{-n}\cdot\alpha_n 	&\mathrm{(open\; string)}\;,\\
+	H 	&= \int_0^{2\pi}\d\sigma\mathcal{H}(\sigma)	= \dfrac{1}{2}\sum_{n=-\infty}^{\infty}\alpha_{-n}\cdot\alpha_n + \tilde{\alpha}_{-n}\cdot\tilde{\alpha}_n	&\mathrm{(closed\; string)}\;.
+\end{align}
+Finally, the constraints on the energy-momentum tensor $T_{++} = 0 = T_{--}$ can be imposed mode by mode in a Fourier expansion.
+\begin{equation}
+	L_m = \dfrac{T}{2} \int_0^{\pi} \d\sigma \e^{-2\i m\sigma}T_{--} = \dfrac{1}{2}\sum_{n=-\infty}^{\infty}\alpha_{m-n}\cdot\alpha_n\;,
+\end{equation}
+and similarly $\bar{L}_m$ for $T_{++}$. These $L_m$ satisfy the Virasoro algebra,
+\begin{align}
+	\pb{L_m, L_n} &= \i (m-n)L_{m+n}\;,\\
+	\pb{\bar{L}_m, \bar{L}_n} &= \i (m-n)\bar{L}_{m+n}\;,\\
+	\pb{\bar{L}_m, L_n} &= 0\;.
+\end{align}
+The zero-modes are related to the Hamiltonian,
+\begin{align}
+	H &= L_0 &\mathrm{open}\;,\\
+	H &= L_0 + \bar{L}_0 & \mathrm{closed}\;.
+\end{align}
+So now the constraints can be imposed mode by mode and for all $m$, $L_m = 0$ and $\bar{L}_m=0$. In particular,
+\begin{align}
+	L_0 &= \dfrac{1}{2}\alpha_0^2 + 2\dfrac{1}{2}\sum_{n+1}^{\infty}\alpha_{-n}\cdot\alpha_n + \dfrac{D}{2}\sum_{n+1}^{\infty}\\
+	&= \alpha'p^{\mu}p_{\mu} + \sum_{n+1}^{\infty}\alpha_{-n}\cdot\alpha_n + \mathrm{const}\\
+	&= -\alpha'M^2 + \sum_{n+1}^{\infty}\alpha_{-n}\cdot\alpha_n + \mathrm{const}\;.
+\end{align}	
+The constant is infinite. If it is ignored, then from $L_0=0$ it follows that
+\begin{equation}
+	M^2 = -\dfrac{1}{\alpha'}\sum_{n=1}^{\infty}\alpha_{-n}\cdot\alpha_n\;.
+\end{equation}
+So the mass of a string follows from the number of oscillator modes that are excited.
+
+
+\end{document}
